@@ -1,0 +1,38 @@
+
+<div class="container">
+<div class="jumbotron">
+<h1>Welcome</h1>
+<h2>Angular & Bootstrap Demo</h2>
+</div>
+<div class="panel panel-primary">
+<div class="panel-heading">Status</div>
+<div class="panel-body">
+<h3>{{title}}</h3>
+
+<div class="row">
+    <div class="col-sm-4 form-group">
+        <label for="states">States</label>
+        <div class="form-group">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle btn-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select States <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li *ngFor="let s of states"><a><input type="checkbox" [checked]="isChecked(s.id)" (change)="onChangeStates($event.target.checked, s)" value="{{s.id}}"> {{s.name}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 form-group">
+        <label>Selected States</label>
+        <div class="form-group">{{ concatenatedStates }}</div>
+    </div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+

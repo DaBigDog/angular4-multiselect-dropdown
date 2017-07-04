@@ -1,0 +1,52 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require("@angular/core");
+var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
+var DataService = (function () {
+    function DataService() {
+    }
+    DataService.prototype.loadStates = function () {
+        var x = JSON.parse(this.jsonStates);
+        return x.map(this.toState);
+    };
+    DataService.prototype.toState = function (r) {
+        var s = ({
+            id: r.id,
+            name: r.name,
+            abbreviation: r.abbreviation
+        });
+        return s;
+    };
+    Object.defineProperty(DataService.prototype, "allStates", {
+        get: function () {
+            if ("undefined" === typeof this._states) {
+                this._states = new BehaviorSubject_1.BehaviorSubject(this.loadStates());
+            }
+            return this._states.asObservable();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DataService.prototype, "jsonStates", {
+        get: function () {
+            return "[\n            {\n                \"id\":0,\n                \"name\": \"Alabama\",\n                \"abbreviation\": \"AL\"\n            },\n            {\n                \"id\":1,\n                \"name\": \"Alaska\",\n                \"abbreviation\": \"AK\"\n            },\n            {\n                \"id\":2,\n                \"name\": \"American Samoa\",\n                \"abbreviation\": \"AS\"\n            },\n            {\n                \"id\":3,\n                \"name\": \"Arizona\",\n                \"abbreviation\": \"AZ\"\n            },\n            {\n                \"id\":4,\n                \"name\": \"Arkansas\",\n                \"abbreviation\": \"AR\"\n            },\n            {\n                \"id\":5,\n                \"name\": \"California\",\n                \"abbreviation\": \"CA\"\n            },\n            {\n                \"id\":6,\n                \"name\": \"Colorado\",\n                \"abbreviation\": \"CO\"\n            },\n            {\n                \"id\":7,\n                \"name\": \"Connecticut\",\n                \"abbreviation\": \"CT\"\n            },\n            {\n                \"id\":8,\n                \"name\": \"Delaware\",\n                \"abbreviation\": \"DE\"\n            },\n            {\n                \"id\":9,\n                \"name\": \"District Of Columbia\",\n                \"abbreviation\": \"DC\"\n            },\n            {\n                \"id\":10,\n                \"name\": \"Federated States Of Micronesia\",\n                \"abbreviation\": \"FM\"\n            },\n            {\n                \"id\":11,\n                \"name\": \"Florida\",\n                \"abbreviation\": \"FL\"\n            },\n            {\n                \"id\":12,\n                \"name\": \"Georgia\",\n                \"abbreviation\": \"GA\"\n            },\n            {\n                \"id\":13,\n                \"name\": \"Guam\",\n                \"abbreviation\": \"GU\"\n            },\n            {\n                \"id\":14,\n                \"name\": \"Hawaii\",\n                \"abbreviation\": \"HI\"\n            },\n            {\n                \"id\":15,\n                \"name\": \"Idaho\",\n                \"abbreviation\": \"ID\"\n            },\n            {\n                \"id\":16,\n                \"name\": \"Illinois\",\n                \"abbreviation\": \"IL\"\n            },\n            {\n                \"id\":17,\n                \"name\": \"Indiana\",\n                \"abbreviation\": \"IN\"\n            },\n            {\n                \"id\":18,\n                \"name\": \"Iowa\",\n                \"abbreviation\": \"IA\"\n            },\n            {\n                \"id\":19,\n                \"name\": \"Kansas\",\n                \"abbreviation\": \"KS\"\n            },\n            {\n                \"id\":20,\n                \"name\": \"Kentucky\",\n                \"abbreviation\": \"KY\"\n            },\n            {\n                \"id\":21,\n                \"name\": \"Louisiana\",\n                \"abbreviation\": \"LA\"\n            },\n            {\n                \"id\":22,\n                \"name\": \"Maine\",\n                \"abbreviation\": \"ME\"\n            },\n            {\n                \"id\":23,\n                \"name\": \"Marshall Islands\",\n                \"abbreviation\": \"MH\"\n            },\n            {\n                \"id\":24,\n                \"name\": \"Maryland\",\n                \"abbreviation\": \"MD\"\n            },\n            {\n                \"id\":25,\n                \"name\": \"Massachusetts\",\n                \"abbreviation\": \"MA\"\n            },\n            {\n                \"id\":26,\n                \"name\": \"Michigan\",\n                \"abbreviation\": \"MI\"\n            },\n            {\n                \"id\":27,\n                \"name\": \"Minnesota\",\n                \"abbreviation\": \"MN\"\n            },\n            {\n                \"id\":28,\n                \"name\": \"Mississippi\",\n                \"abbreviation\": \"MS\"\n            },\n            {\n                \"id\":29,\n                \"name\": \"Missouri\",\n                \"abbreviation\": \"MO\"\n            },\n            {\n                \"id\":30,\n                \"name\": \"Montana\",\n                \"abbreviation\": \"MT\"\n            },\n            {\n                \"id\":31,\n                \"name\": \"Nebraska\",\n                \"abbreviation\": \"NE\"\n            },\n            {\n                \"id\":32,\n                \"name\": \"Nevada\",\n                \"abbreviation\": \"NV\"\n            },\n            {\n                \"id\":33,\n                \"name\": \"New Hampshire\",\n                \"abbreviation\": \"NH\"\n            },\n            {\n                \"id\":34,\n                \"name\": \"New Jersey\",\n                \"abbreviation\": \"NJ\"\n            },\n            {\n                \"id\":35,\n                \"name\": \"New Mexico\",\n                \"abbreviation\": \"NM\"\n            },\n            {\n                \"id\":36,\n                \"name\": \"New York\",\n                \"abbreviation\": \"NY\"\n            },\n            {\n                \"id\":37,\n                \"name\": \"North Carolina\",\n                \"abbreviation\": \"NC\"\n            },\n            {\n                \"id\":38,\n                \"name\": \"North Dakota\",\n                \"abbreviation\": \"ND\"\n            },\n            {\n                \"id\":39,\n                \"name\": \"Northern Mariana Islands\",\n                \"abbreviation\": \"MP\"\n            },\n            {\n                \"id\":40,\n                \"name\": \"Ohio\",\n                \"abbreviation\": \"OH\"\n            },\n            {\n                \"id\":41,\n                \"name\": \"Oklahoma\",\n                \"abbreviation\": \"OK\"\n            },\n            {\n                \"id\":42,\n                \"name\": \"Oregon\",\n                \"abbreviation\": \"OR\"\n            },\n            {\n                \"id\":43,\n                \"name\": \"Palau\",\n                \"abbreviation\": \"PW\"\n            },\n            {\n                \"id\":44,\n                \"name\": \"Pennsylvania\",\n                \"abbreviation\": \"PA\"\n            },\n            {\n                \"id\":45,\n                \"name\": \"Puerto Rico\",\n                \"abbreviation\": \"PR\"\n            },\n            {\n                \"id\":46,\n                \"name\": \"Rhode Island\",\n                \"abbreviation\": \"RI\"\n            },\n            {\n                \"id\":47,\n                \"name\": \"South Carolina\",\n                \"abbreviation\": \"SC\"\n            },\n            {\n                \"id\":48,\n                \"name\": \"South Dakota\",\n                \"abbreviation\": \"SD\"\n            },\n            {\n                \"id\":49,\n                \"name\": \"Tennessee\",\n                \"abbreviation\": \"TN\"\n            },\n            {\n                \"id\":50,\n                \"name\": \"Texas\",\n                \"abbreviation\": \"TX\"\n            },\n            {\n                \"id\":51,\n                \"name\": \"Utah\",\n                \"abbreviation\": \"UT\"\n            },\n            {\n                \"id\":52,\n                \"name\": \"Vermont\",\n                \"abbreviation\": \"VT\"\n            },\n            {\n                \"id\":53,\n                \"name\": \"Virgin Islands\",\n                \"abbreviation\": \"VI\"\n            },\n            {\n                \"id\":54,\n                \"name\": \"Virginia\",\n                \"abbreviation\": \"VA\"\n            },\n            {\n                \"id\":55,\n                \"name\": \"Washington\",\n                \"abbreviation\": \"WA\"\n            },\n            {\n                \"id\":56,\n                \"name\": \"West Virginia\",\n                \"abbreviation\": \"WV\"\n            },\n            {\n                \"id\":57,\n                \"name\": \"Wisconsin\",\n                \"abbreviation\": \"WI\"\n            },\n            {\n                \"id\":58,\n                \"name\": \"Wyoming\",\n                \"abbreviation\": \"WY\"\n            }\n        ]";
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return DataService;
+}());
+DataService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], DataService);
+exports.DataService = DataService;
+//# sourceMappingURL=data.service.js.map
