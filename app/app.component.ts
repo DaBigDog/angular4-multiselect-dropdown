@@ -82,4 +82,15 @@ export class AppComponent {
         return s;
     }
 
+
+
+    private selectedState : State;
+    private selectState(state: State) : boolean {
+        
+        this.selectedState = state;
+
+        console.log(this.selectedState);
+        return false;
+    }
+
 }

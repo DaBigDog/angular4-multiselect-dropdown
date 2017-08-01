@@ -88,6 +88,11 @@ var AppComponent = (function () {
         enumerable: true,
         configurable: true
     });
+    AppComponent.prototype.selectState = function (state) {
+        this.selectedState = state;
+        console.log(this.selectedState);
+        return false;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
